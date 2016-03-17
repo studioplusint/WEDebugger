@@ -70,6 +70,8 @@
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapView)];
     singleTap.numberOfTapsRequired = 1;
     [self.view addGestureRecognizer:singleTap];
+    
+    [self.view setNeedsUpdateConstraints];
 }
 
 - (void)updateViewConstraints {
