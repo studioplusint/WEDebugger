@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F23F749947DC3752E77B244 /* Pods_WEDebugger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FBA62B1523B86A0FAB9EECA /* Pods_WEDebugger.framework */; };
 		BED38F121C9AB32500F5B790 /* WEDebugger.m in Sources */ = {isa = PBXBuildFile; fileRef = BED38F111C9AB32500F5B790 /* WEDebugger.m */; };
 		BED38F151C9AB34600F5B790 /* WEDebuggerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BED38F141C9AB34600F5B790 /* WEDebuggerViewController.m */; };
 		BEF813FC1C9AB12200FF34C8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF813FB1C9AB12200FF34C8 /* main.m */; };
@@ -17,6 +18,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5FBA62B1523B86A0FAB9EECA /* Pods_WEDebugger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WEDebugger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		93B684ABE831D030F743DC43 /* Pods-WEDebugger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WEDebugger.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WEDebugger/Pods-WEDebugger.debug.xcconfig"; sourceTree = "<group>"; };
+		B66632B67E679B6A47D59314 /* Pods-WEDebugger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WEDebugger.release.xcconfig"; path = "Pods/Target Support Files/Pods-WEDebugger/Pods-WEDebugger.release.xcconfig"; sourceTree = "<group>"; };
 		BE23AE641C9AB0BF006856BC /* WEDebugger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WEDebugger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BED38F101C9AB32500F5B790 /* WEDebugger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WEDebugger.h; path = Source/WEDebugger.h; sourceTree = SOURCE_ROOT; };
 		BED38F111C9AB32500F5B790 /* WEDebugger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WEDebugger.m; path = Source/WEDebugger.m; sourceTree = SOURCE_ROOT; };
@@ -37,17 +41,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F23F749947DC3752E77B244 /* Pods_WEDebugger.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		35679355DF2CA93B5F13ECD2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				93B684ABE831D030F743DC43 /* Pods-WEDebugger.debug.xcconfig */,
+				B66632B67E679B6A47D59314 /* Pods-WEDebugger.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		BE23AE5B1C9AB0BE006856BC = {
 			isa = PBXGroup;
 			children = (
 				BE23AE661C9AB0BF006856BC /* WEDebugger */,
 				BE23AE651C9AB0BF006856BC /* Products */,
+				35679355DF2CA93B5F13ECD2 /* Pods */,
+				FA5583C3C1820FBB7A94CC71 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,6 +110,14 @@
 			name = Source;
 			sourceTree = "<group>";
 		};
+		FA5583C3C1820FBB7A94CC71 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5FBA62B1523B86A0FAB9EECA /* Pods_WEDebugger.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -101,9 +125,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BE23AE7B1C9AB0BF006856BC /* Build configuration list for PBXNativeTarget "WEDebugger" */;
 			buildPhases = (
+				8B42C862D0339A7C070E93AA /* Check Pods Manifest.lock */,
 				BE23AE601C9AB0BF006856BC /* Sources */,
 				BE23AE611C9AB0BF006856BC /* Frameworks */,
 				BE23AE621C9AB0BF006856BC /* Resources */,
+				D196322AB6B20CC9F0D86F03 /* Embed Pods Frameworks */,
+				E111B11ADFFB2D0C8CC5417C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -125,6 +152,7 @@
 				TargetAttributes = {
 					BE23AE631C9AB0BF006856BC = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = B68QLRDMYT;
 					};
 				};
 			};
@@ -157,6 +185,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8B42C862D0339A7C070E93AA /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D196322AB6B20CC9F0D86F03 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WEDebugger/Pods-WEDebugger-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E111B11ADFFB2D0C8CC5417C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WEDebugger/Pods-WEDebugger-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BE23AE601C9AB0BF006856BC /* Sources */ = {
@@ -267,25 +343,33 @@
 		};
 		BE23AE7C1C9AB0BF006856BC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 93B684ABE831D030F743DC43 /* Pods-WEDebugger.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "$(SRCROOT)/Example/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Ekhoo.WEDebugger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
 		BE23AE7D1C9AB0BF006856BC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B66632B67E679B6A47D59314 /* Pods-WEDebugger.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "$(SRCROOT)/Example/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Ekhoo.WEDebugger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
