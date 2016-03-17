@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "DemoViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,6 +17,11 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.rootViewController = [DemoViewController new];
+    
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 

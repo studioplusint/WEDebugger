@@ -6,22 +6,26 @@
 //  Copyright © 2016 Lucas Ortis. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "DemoViewController.h"
 
-@interface ViewController ()
+@interface DemoViewController ()
 
 @end
 
-@implementation ViewController
+@implementation DemoViewController
+
+- (void)loadView {
+    [super loadView];
+    
+    self.view.backgroundColor = [UIColor redColor];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end
