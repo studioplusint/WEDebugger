@@ -9,6 +9,7 @@
 #import "DemoViewController.h"
 #import "WEDebugger.h"
 #import "Masonry.h"
+#import "WEDebuggerViewController.h"
 
 @interface DemoViewController ()
 
@@ -39,10 +40,10 @@
     
     self.navigationController.navigationBar.topItem.title = @"WEDebugger";
     
-    _button01 = [self buttonWithText:@"Salut"];
-    _button02 = [self buttonWithText:@"Coucou"];
-    _button03 = [self buttonWithText:@"Bonjour"];
-    _logsButton = [self buttonWithText:@"Voir les logs"];
+    _button01 = [self buttonWithText:@"Salut" logsButton:NO];
+    _button02 = [self buttonWithText:@"Coucou" logsButton:NO];
+    _button03 = [self buttonWithText:@"Bonjour" logsButton:NO];
+    _logsButton = [self buttonWithText:@"Voir les logs" logsButton:YES];
     
     [self.view addSubview:_button01];
     [self.view addSubview:_button02];
@@ -108,7 +109,11 @@
     WELog(sender.titleLabel.text);
 }
 
-- (UIButton *)buttonWithText:(NSString *)text {
+- (void)displayLogs {
+    [self.navigationController pushViewController:[WEDebuggerViewController new] animated:YES];
+}
+
+- (UIButton *)buttonWithText:(NSString *)text logsButton:(BOOL)logsButton {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.layer.borderColor = [UIColor blackColor].CGColor;
     button.layer.borderWidth = 1.0f;
@@ -118,7 +123,12 @@
     [button setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
     [button setBackgroundImage:[self imageWithColor:[UIColor blackColor]] forState:UIControlStateHighlighted];
     [button setBackgroundImage:nil forState:UIControlStateNormal];
-    [button addTarget:self action:@selector(buttonSelected:) forControlEvents:UIControlEventTouchUpInside];
+    
+    if (logsButton) {
+        [button addTarget:self action:@selector(displayLogs) forControlEvents:UIControlEventTouchUpInside];
+    } else {
+        [button addTarget:self action:@selector(buttonSelected:) forControlEvents:UIControlEventTouchUpInside];
+    }
     
     return button;
 }
