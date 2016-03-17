@@ -56,6 +56,8 @@
         stringToDisplay = [[object description] UTF8String];
     }
     
+    [_logs addObject:[NSString stringWithUTF8String:stringToDisplay]];
+    
     fprintf(stderr, "%s: %s => (%s:%ld) : %s\n", [[_dateFormatter stringFromDate:[NSDate date]] UTF8String], function, [[[NSString stringWithUTF8String:file] lastPathComponent] UTF8String], (long)line, stringToDisplay);
 }
 
