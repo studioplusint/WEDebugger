@@ -66,6 +66,10 @@
     UISwipeGestureRecognizer *gesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(closeDebugger)];
     gesture.direction = UISwipeGestureRecognizerDirectionRight;
     [self.view addGestureRecognizer:gesture];
+    
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapView)];
+    singleTap.numberOfTapsRequired = 1;
+    [self.view addGestureRecognizer:singleTap];
 }
 
 - (void)updateViewConstraints {
@@ -104,6 +108,10 @@
 
 - (void)closeDebugger {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)handleTapView {
+    [_search resignFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning {
