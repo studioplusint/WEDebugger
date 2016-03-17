@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WEDebuggerViewController : UIViewController
+@interface WEDebuggerViewController : UIViewController <UITextFieldDelegate>
 
 @end

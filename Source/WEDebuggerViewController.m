@@ -45,6 +45,12 @@
     _search.textAlignment = NSTextAlignmentCenter;
     _search.textColor = [UIColor whiteColor];
     _search.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Rechercher" attributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+    _search.autocorrectionType = UITextAutocorrectionTypeNo;
+    _search.autocapitalizationType = UITextAutocapitalizationTypeNone;
+    _search.returnKeyType = UIReturnKeyDone;
+    _search.delegate = self;
+    _search.tintColor = [UIColor whiteColor];
+    [_search addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
     
     _terminal = [UITextView new];
     _terminal.editable = NO;
@@ -102,6 +108,28 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+
+#pragma mark - UITextFieldDelegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    
+    return YES;
+}
+
+- (void)textFieldDidChange:(UITextField *)textField {
+    _terminal.text = @"";
+    
+    if (textField.text && textField.text.length > 0) {
+        for (NSString *log in [WEDebugger sharedInstance].logs) {
+            if ([log rangeOfString:textField.text].location != NSNotFound) {
+                _terminal.text = [NSString stringWithFormat:@"%@\n%@", _terminal.text, log];
+            }
+        }
+    } else {
+        [self fillTerminal];
+    }
 }
 
 @end
