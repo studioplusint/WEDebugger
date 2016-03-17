@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BED38F121C9AB32500F5B790 /* WEDebugger.m in Sources */ = {isa = PBXBuildFile; fileRef = BED38F111C9AB32500F5B790 /* WEDebugger.m */; };
+		BED38F151C9AB34600F5B790 /* WEDebuggerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BED38F141C9AB34600F5B790 /* WEDebuggerViewController.m */; };
 		BEF813FC1C9AB12200FF34C8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF813FB1C9AB12200FF34C8 /* main.m */; };
 		BEF814041C9AB15800FF34C8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF814011C9AB15800FF34C8 /* AppDelegate.m */; };
 		BEF814051C9AB15800FF34C8 /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF814031C9AB15800FF34C8 /* DemoViewController.m */; };
@@ -16,6 +18,10 @@
 
 /* Begin PBXFileReference section */
 		BE23AE641C9AB0BF006856BC /* WEDebugger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WEDebugger.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BED38F101C9AB32500F5B790 /* WEDebugger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WEDebugger.h; path = Source/WEDebugger.h; sourceTree = SOURCE_ROOT; };
+		BED38F111C9AB32500F5B790 /* WEDebugger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WEDebugger.m; path = Source/WEDebugger.m; sourceTree = SOURCE_ROOT; };
+		BED38F131C9AB34600F5B790 /* WEDebuggerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WEDebuggerViewController.h; path = Source/WEDebuggerViewController.h; sourceTree = SOURCE_ROOT; };
+		BED38F141C9AB34600F5B790 /* WEDebuggerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WEDebuggerViewController.m; path = Source/WEDebuggerViewController.m; sourceTree = SOURCE_ROOT; };
 		BEF813FB1C9AB12200FF34C8 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Example/main.m; sourceTree = SOURCE_ROOT; };
 		BEF813FD1C9AB13000FF34C8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Example/Info.plist; sourceTree = SOURCE_ROOT; };
 		BEF814001C9AB15800FF34C8 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Example/AppDelegate.h; sourceTree = SOURCE_ROOT; };
@@ -56,13 +62,13 @@
 		BE23AE661C9AB0BF006856BC /* WEDebugger */ = {
 			isa = PBXGroup;
 			children = (
+				BEF813FF1C9AB14B00FF34C8 /* Source */,
 				BEF814081C9AB16F00FF34C8 /* LaunchScreen.storyboard */,
 				BEF814061C9AB16100FF34C8 /* Assets.xcassets */,
 				BEF814001C9AB15800FF34C8 /* AppDelegate.h */,
 				BEF814011C9AB15800FF34C8 /* AppDelegate.m */,
 				BEF814021C9AB15800FF34C8 /* DemoViewController.h */,
 				BEF814031C9AB15800FF34C8 /* DemoViewController.m */,
-				BEF813FF1C9AB14B00FF34C8 /* Source */,
 				BE23AE671C9AB0BF006856BC /* Supporting Files */,
 			);
 			path = WEDebugger;
@@ -80,6 +86,10 @@
 		BEF813FF1C9AB14B00FF34C8 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				BED38F101C9AB32500F5B790 /* WEDebugger.h */,
+				BED38F111C9AB32500F5B790 /* WEDebugger.m */,
+				BED38F131C9AB34600F5B790 /* WEDebuggerViewController.h */,
+				BED38F141C9AB34600F5B790 /* WEDebuggerViewController.m */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -153,6 +163,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BED38F121C9AB32500F5B790 /* WEDebugger.m in Sources */,
+				BED38F151C9AB34600F5B790 /* WEDebuggerViewController.m in Sources */,
 				BEF814051C9AB15800FF34C8 /* DemoViewController.m in Sources */,
 				BEF814041C9AB15800FF34C8 /* AppDelegate.m in Sources */,
 				BEF813FC1C9AB12200FF34C8 /* main.m in Sources */,

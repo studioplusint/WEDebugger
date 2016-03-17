@@ -7,6 +7,7 @@
 //
 
 #import "DemoViewController.h"
+#import "WEDebugger.h"
 
 @interface DemoViewController ()
 
@@ -22,6 +23,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    WELog(@"Salut");
 }
 
 - (void)didReceiveMemoryWarning {
