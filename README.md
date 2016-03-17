@@ -43,6 +43,9 @@ The library will log following this format: `{time}: [{class} {method}] => ({fil
 }
 ```
 
+## Close logs
+Swipe to the right in order to close the logs controller.
+
 # Author
 Lucas Ortis:
 - me@lucas-ortis.com
