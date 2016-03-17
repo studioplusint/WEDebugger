@@ -131,7 +131,7 @@
     
     if (textField.text && textField.text.length > 0) {
         for (NSString *log in [WEDebugger sharedInstance].logs) {
-            if ([log rangeOfString:textField.text].location != NSNotFound) {
+            if ([log rangeOfString:textField.text options:NSCaseInsensitiveSearch].location != NSNotFound) {
                 _terminal.text = [NSString stringWithFormat:@"%@\n%@", _terminal.text, log];
             }
         }
