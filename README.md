@@ -8,4 +8,5 @@
 Simple and light weight debugger tool.
 
 # Demo
-![WEDebugger](https://github.com/Ekhoo/WEDebugger/blob/master/Source/Asset/demo.gif)
+![WEDebugger](https://github.com/Ekhoo/WEDebugger/blob/master/Source/Asset/demo01.png)
+![WEDebugger](https://github.com/Ekhoo/WEDebugger/blob/master/Source/Asset/demo02.png)
