@@ -49,7 +49,7 @@
     
     if ([object isKindOfClass:[NSString class]]) {
         va_list args;
-        va_start(args, type);
+        va_start(args, object);
         stringToDisplay = [[[NSString alloc] initWithFormat:object arguments:args] UTF8String];
         va_end(args);
     } else {
