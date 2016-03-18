@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3F23F749947DC3752E77B244 /* Pods_WEDebugger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FBA62B1523B86A0FAB9EECA /* Pods_WEDebugger.framework */; };
+		BE0F2C9F1C9BE771007A63F0 /* WELogCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE0F2C9E1C9BE771007A63F0 /* WELogCell.m */; };
+		BE0F2CA21C9BE92E007A63F0 /* WELog.m in Sources */ = {isa = PBXBuildFile; fileRef = BE0F2CA11C9BE92E007A63F0 /* WELog.m */; };
 		BED38F121C9AB32500F5B790 /* WEDebugger.m in Sources */ = {isa = PBXBuildFile; fileRef = BED38F111C9AB32500F5B790 /* WEDebugger.m */; };
 		BED38F151C9AB34600F5B790 /* WEDebuggerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BED38F141C9AB34600F5B790 /* WEDebuggerViewController.m */; };
 		BEF813FC1C9AB12200FF34C8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF813FB1C9AB12200FF34C8 /* main.m */; };
@@ -21,6 +23,10 @@
 		5FBA62B1523B86A0FAB9EECA /* Pods_WEDebugger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WEDebugger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		93B684ABE831D030F743DC43 /* Pods-WEDebugger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WEDebugger.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WEDebugger/Pods-WEDebugger.debug.xcconfig"; sourceTree = "<group>"; };
 		B66632B67E679B6A47D59314 /* Pods-WEDebugger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WEDebugger.release.xcconfig"; path = "Pods/Target Support Files/Pods-WEDebugger/Pods-WEDebugger.release.xcconfig"; sourceTree = "<group>"; };
+		BE0F2C9D1C9BE771007A63F0 /* WELogCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WELogCell.h; path = Source/WELogCell.h; sourceTree = SOURCE_ROOT; };
+		BE0F2C9E1C9BE771007A63F0 /* WELogCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WELogCell.m; path = Source/WELogCell.m; sourceTree = SOURCE_ROOT; };
+		BE0F2CA01C9BE92E007A63F0 /* WELog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WELog.h; path = Source/WELog.h; sourceTree = SOURCE_ROOT; };
+		BE0F2CA11C9BE92E007A63F0 /* WELog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WELog.m; path = Source/WELog.m; sourceTree = SOURCE_ROOT; };
 		BE23AE641C9AB0BF006856BC /* WEDebugger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WEDebugger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BED38F101C9AB32500F5B790 /* WEDebugger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WEDebugger.h; path = Source/WEDebugger.h; sourceTree = SOURCE_ROOT; };
 		BED38F111C9AB32500F5B790 /* WEDebugger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WEDebugger.m; path = Source/WEDebugger.m; sourceTree = SOURCE_ROOT; };
@@ -106,6 +112,10 @@
 				BED38F111C9AB32500F5B790 /* WEDebugger.m */,
 				BED38F131C9AB34600F5B790 /* WEDebuggerViewController.h */,
 				BED38F141C9AB34600F5B790 /* WEDebuggerViewController.m */,
+				BE0F2C9D1C9BE771007A63F0 /* WELogCell.h */,
+				BE0F2C9E1C9BE771007A63F0 /* WELogCell.m */,
+				BE0F2CA01C9BE92E007A63F0 /* WELog.h */,
+				BE0F2CA11C9BE92E007A63F0 /* WELog.m */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -239,8 +249,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE0F2C9F1C9BE771007A63F0 /* WELogCell.m in Sources */,
 				BED38F121C9AB32500F5B790 /* WEDebugger.m in Sources */,
 				BED38F151C9AB34600F5B790 /* WEDebuggerViewController.m in Sources */,
+				BE0F2CA21C9BE92E007A63F0 /* WELog.m in Sources */,
 				BEF814051C9AB15800FF34C8 /* DemoViewController.m in Sources */,
 				BEF814041C9AB15800FF34C8 /* AppDelegate.m in Sources */,
 				BEF813FC1C9AB12200FF34C8 /* main.m in Sources */,
