@@ -61,13 +61,13 @@
             _logLabel.textColor = [UIColor whiteColor];
             break;
         case WELogSuccessType:
-            _logLabel.textColor = [UIColor greenColor];
+            _logLabel.textColor = [UIColor colorWithRed:46.0f / 255.0f green:204.0f / 255.0f blue:113.0f / 255.0f alpha:1.0f];
             break;
         case WELogErrorType:
-            _logLabel.textColor = [UIColor redColor];
+            _logLabel.textColor = [UIColor colorWithRed:247.0f / 255.0f green:71.0f / 255.0f blue:133.0f / 255.0f alpha:1.0f];
             break;
         case WELogInfosType:
-            _logLabel.textColor = [UIColor blueColor];
+            _logLabel.textColor = [UIColor colorWithRed:104.0f / 255.0f green:217.0f / 255.0f blue:241.0f / 255.0f alpha:1.0f];
             break;
             
         default:
