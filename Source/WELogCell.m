@@ -27,7 +27,6 @@
         self.backgroundColor = [UIColor blackColor];
         
         _logLabel = [UILabel new];
-        _logLabel.textColor = [UIColor whiteColor];
         _logLabel.numberOfLines = 0;
         _logLabel.font = [UIFont systemFontOfSize:14.0f];
         _logLabel.lineBreakMode = NSLineBreakByWordWrapping;
@@ -56,6 +55,24 @@
 
 - (void)setLog:(WELog *)log {
     _log = log;
+    
+    switch (log.type) {
+        case WELogDefaultType:
+            _logLabel.textColor = [UIColor whiteColor];
+            break;
+        case WELogSuccessType:
+            _logLabel.textColor = [UIColor greenColor];
+            break;
+        case WELogErrorType:
+            _logLabel.textColor = [UIColor redColor];
+            break;
+        case WELogInfosType:
+            _logLabel.textColor = [UIColor blueColor];
+            break;
+            
+        default:
+            break;
+    }
     
     _logLabel.text = _log.log;
 }

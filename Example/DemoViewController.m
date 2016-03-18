@@ -16,6 +16,7 @@
 @property(nonatomic, strong, readonly) UIButton *button01;
 @property(nonatomic, strong, readonly) UIButton *button02;
 @property(nonatomic, strong, readonly) UIButton *button03;
+@property(nonatomic, strong, readonly) UIButton *button04;
 @property(nonatomic, strong, readonly) UIButton *logsButton;
 @property(nonatomic, assign, readwrite) BOOL didSetupConstraints;
 
@@ -40,14 +41,16 @@
     
     self.navigationController.navigationBar.topItem.title = @"WEDebugger";
     
-    _button01 = [self buttonWithText:@"Salut" logsButton:NO];
-    _button02 = [self buttonWithText:@"Coucou" logsButton:NO];
-    _button03 = [self buttonWithText:@"Bonjour" logsButton:NO];
-    _logsButton = [self buttonWithText:@"Voir les logs" logsButton:YES];
+    _button01 = [self buttonWithText:@"Default" logsButton:NO];
+    _button02 = [self buttonWithText:@"Success" logsButton:NO];
+    _button03 = [self buttonWithText:@"Infos" logsButton:NO];
+    _button04 = [self buttonWithText:@"Error" logsButton:NO];
+    _logsButton = [self buttonWithText:@"See logs" logsButton:YES];
     
     [self.view addSubview:_button01];
     [self.view addSubview:_button02];
     [self.view addSubview:_button03];
+    [self.view addSubview:_button04];
     [self.view addSubview:_logsButton];
     
     [self.view setNeedsUpdateConstraints];
@@ -66,7 +69,7 @@
             
             make.size.mas_equalTo(size);
             make.centerX.mas_equalTo(self.view);
-            make.centerY.mas_equalTo(self.view);
+            make.baseline.mas_equalTo(self.view.mas_centerY).with.offset(-16.0f);
             
             _button01.layer.cornerRadius = size.height / 2.0f;
         }];
@@ -76,7 +79,7 @@
             
             make.size.mas_equalTo(size);
             make.centerX.mas_equalTo(self.view);
-            make.bottom.mas_equalTo(_button01.mas_top).with.offset(-16.0f);
+            make.top.mas_equalTo(self.view.mas_centerY).with.offset(16.0f);
             
             _button02.layer.cornerRadius = size.height / 2.0f;
         }];
@@ -86,9 +89,19 @@
             
             make.size.mas_equalTo(size);
             make.centerX.mas_equalTo(self.view);
-            make.top.mas_equalTo(_button01.mas_bottom).with.offset(16.0f);
+            make.top.mas_equalTo(_button02.mas_bottom).with.offset(16.0f);
             
             _button03.layer.cornerRadius = size.height / 2.0f;
+        }];
+        
+        [_button04 mas_remakeConstraints:^(MASConstraintMaker *make) {
+            CGSize size = CGSizeMake([_button04 intrinsicContentSize].width + 40.0f, [_button04 intrinsicContentSize].height);
+            
+            make.size.mas_equalTo(size);
+            make.centerX.mas_equalTo(self.view);
+            make.bottom.mas_equalTo(_button01.mas_top).with.offset(-16.0f);
+            
+            _button04.layer.cornerRadius = size.height / 2.0f;
         }];
         
         [_logsButton mas_remakeConstraints:^(MASConstraintMaker *make) {
@@ -106,7 +119,15 @@
 }
 
 - (void)buttonSelected:(UIButton *)sender {
-    WELog(sender.titleLabel.text);
+    if (sender == _button01) {
+        WELog(sender.titleLabel.text);
+    } else if (sender == _button02) {
+        WESuccessLog(sender.titleLabel.text);
+    } else if (sender == _button03) {
+        WEInfosLog(sender.titleLabel.text);
+    } else if (sender == _button04) {
+        WEErrorLog(sender.titleLabel.text);
+    }
 }
 
 - (void)displayLogs {
