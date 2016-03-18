@@ -17,7 +17,7 @@ WEDebugger is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod "WEDebugger", '~> 0.0.2'
+pod "WEDebugger", '~> 0.0.3'
 ```
 
 # Usage
