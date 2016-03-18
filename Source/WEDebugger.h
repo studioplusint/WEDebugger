@@ -7,19 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "WELog.h"
 
-#define WELog(...) [[WEDebugger sharedInstance] log:__FILE__ :__PRETTY_FUNCTION__ :__LINE__ :__VA_ARGS__]
-#define WEErrorLog(...) [[WEDebugger sharedInstance] errorLog:__FILE__ :__PRETTY_FUNCTION__ :__LINE__ :__VA_ARGS__]
-#define WESuccessLog(...) [[WEDebugger sharedInstance] successLog:__FILE__ :__PRETTY_FUNCTION__ :__LINE__ :__VA_ARGS__]
-#define WEInfosLog(...) [[WEDebugger sharedInstance] infosLog:__FILE__ :__PRETTY_FUNCTION__ :__LINE__ :__VA_ARGS__]
+#define WELog(...) [[WEDebugger sharedInstance] log:__FILE__ :__PRETTY_FUNCTION__ :__LINE__ :WELogDefaultType :__VA_ARGS__]
+#define WEErrorLog(...) [[WEDebugger sharedInstance] log:__FILE__ :__PRETTY_FUNCTION__ :__LINE__ :WELogErrorType :__VA_ARGS__]
+#define WESuccessLog(...) [[WEDebugger sharedInstance] log:__FILE__ :__PRETTY_FUNCTION__ :__LINE__ :WELogSuccessType :__VA_ARGS__]
+#define WEInfosLog(...) [[WEDebugger sharedInstance] log:__FILE__ :__PRETTY_FUNCTION__ :__LINE__ :WELogInfosType :__VA_ARGS__]
 
 @interface WEDebugger : NSObject
 
 + (instancetype)sharedInstance;
-- (void)log:(const char *)file :(const char *)function :(NSInteger)line :(id)object, ...;
-- (void)successLog:(const char *)file :(const char *)function :(NSInteger)line :(id)object, ...;
-- (void)errorLog:(const char *)file :(const char *)function :(NSInteger)line :(id)object, ...;
-- (void)infosLog:(const char *)file :(const char *)function :(NSInteger)line :(id)object, ...;
+- (void)log:(const char *)file :(const char *)function :(NSInteger)line :(WELogType)type :(id)object, ...;
 
 @property(nonatomic, strong, readonly) NSMutableArray *logs;
 @property(nonatomic, assign, readwrite) BOOL enabled;

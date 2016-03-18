@@ -7,7 +7,6 @@
 //
 
 #import "WEDebugger.h"
-#import "WELog.h"
 
 @interface WEDebugger ()
 
@@ -41,16 +40,7 @@
     return self;
 }
 
-- (void)log:(const char *)file :(const char *)function :(NSInteger)line :(id)object, ... {
-    va_list args;
-    va_start(args, object);
-    
-    [self log:file :function :line :object :WELogDefaultType, args];
-    
-    va_end(args);
-}
-
-- (void)log:(const char *)file :(const char *)function :(NSInteger)line :(id)object :(WELogType)type, ... {
+- (void)log:(const char *)file :(const char *)function :(NSInteger)line :(WELogType)type :(id)object, ... {
     if (!_enabled) {
         return;
     }
@@ -71,33 +61,6 @@
     [_logs addObject:[[WELog alloc] initWithLog:fullString type:type]];
     
     fprintf(stderr, [fullString UTF8String]);
-}
-
-- (void)successLog:(const char *)file :(const char *)function :(NSInteger)line :(id)object, ... {
-    va_list args;
-    va_start(args, object);
-    
-    [self log:file :function :line :object :WELogSuccessType, args];
-    
-    va_end(args);
-}
-
-- (void)errorLog:(const char *)file :(const char *)function :(NSInteger)line :(id)object, ... {
-    va_list args;
-    va_start(args, object);
-    
-    [self log:file :function :line :object :WELogErrorType, args];
-    
-    va_end(args);
-}
-
-- (void)infosLog:(const char *)file :(const char *)function :(NSInteger)line :(id)object, ... {
-    va_list args;
-    va_start(args, object);
-    
-    [self log:file :function :line :object :WELogInfosType, args];
-    
-    va_end(args);
 }
 
 @end

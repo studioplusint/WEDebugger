@@ -133,7 +133,7 @@
 
 - (void)buttonSelected:(UIButton *)sender {
     if (sender == _button01) {
-        WELog(sender.titleLabel.text);
+        WELog(@"%@", sender.titleLabel.text);
     } else if (sender == _button02) {
         WESuccessLog(sender.titleLabel.text);
     } else if (sender == _button03) {
