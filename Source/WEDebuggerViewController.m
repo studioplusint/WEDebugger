@@ -15,7 +15,7 @@
 
 @property(nonatomic, strong, readonly) UITableView *terminal;
 @property(nonatomic, strong, readonly) UITextField *search;
-@property(nonatomic, strong, readonly) UIButton *validate;
+@property(nonatomic, strong, readwrite) NSMutableArray *data;
 @property(nonatomic, assign, readwrite) BOOL didSetupConstraints;
 
 @end
@@ -27,6 +27,7 @@
     
     if (self) {
         _didSetupConstraints = NO;
+        _data = [NSMutableArray array];
     }
     
     return self;
@@ -63,7 +64,7 @@
     [self.view addSubview:_search];
     [self.view addSubview:_terminal];
     
-    [_terminal reloadData];
+    [self fillTerminal];
     
     UISwipeGestureRecognizer *gesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(closeDebugger)];
     gesture.direction = UISwipeGestureRecognizerDirectionRight;
@@ -105,9 +106,11 @@
 }
 
 - (void)fillTerminal {
-//    for (NSString *log in [WEDebugger sharedInstance].logs) {
-//        _terminal.text = [NSString stringWithFormat:@"%@\n%@", _terminal.text, log];
-//    }
+    [_data removeAllObjects];
+    
+    [_data addObjectsFromArray:[WEDebugger sharedInstance].logs];
+    
+    [_terminal reloadData];
 }
 
 - (void)closeDebugger {
@@ -129,12 +132,12 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [WEDebugger sharedInstance].logs.count;
+    return _data.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     WELogCell *cell = [tableView dequeueReusableCellWithIdentifier:@"WE_LOG_CELL"];
-    WELog *log = [WEDebugger sharedInstance].logs[indexPath.row];
+    WELog *log = _data[indexPath.row];
     
     [cell setLog:log];
     
@@ -144,7 +147,7 @@
 #pragma mark - UITableViewDelegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    WELog *log = [WEDebugger sharedInstance].logs[indexPath.row];
+    WELog *log = _data[indexPath.row];
     CGSize maxSize = CGSizeMake([UIScreen mainScreen].bounds.size.width - 32.0f, CGFLOAT_MAX);
     UIFont *font = [UIFont systemFontOfSize:14.0f];
     CGRect frameCell = [log.log boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: font} context:nil];
@@ -164,17 +167,20 @@
 }
 
 - (void)textFieldDidChange:(UITextField *)textField {
-//    _terminal.text = @"";
-//    
-//    if (textField.text && textField.text.length > 0) {
-//        for (NSString *log in [WEDebugger sharedInstance].logs) {
-//            if ([log rangeOfString:textField.text options:NSCaseInsensitiveSearch].location != NSNotFound) {
-//                _terminal.text = [NSString stringWithFormat:@"%@\n%@", _terminal.text, log];
-//            }
-//        }
-//    } else {
-//        [self fillTerminal];
-//    }
+    [_data removeAllObjects];
+    
+    
+    if (textField.text && textField.text.length > 0) {
+        for (WELog *log in [WEDebugger sharedInstance].logs) {
+            if ([log.log rangeOfString:textField.text options:NSCaseInsensitiveSearch].location != NSNotFound) {
+                [_data addObject:log];
+            }
+        }
+        
+        [_terminal reloadData];
+    } else {
+        [self fillTerminal];
+    }
 }
 
 @end
