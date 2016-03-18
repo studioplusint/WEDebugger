@@ -25,6 +25,7 @@
     if (self) {
         _didSetupConstraints = NO;
         self.backgroundColor = [UIColor blackColor];
+        self.selectionStyle = UITableViewCellSeparatorStyleNone;
         
         _logLabel = [UILabel new];
         _logLabel.numberOfLines = 0;
@@ -75,10 +76,6 @@
     }
     
     _logLabel.text = _log.log;
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
 }
 
 @end

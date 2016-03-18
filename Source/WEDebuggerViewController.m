@@ -11,11 +11,14 @@
 #import "WEDebugger.h"
 #import "WELogCell.h"
 
+static CGFloat kCompactedCellHeight = 100.0f;
+
 @interface WEDebuggerViewController ()
 
 @property(nonatomic, strong, readonly) UITableView *terminal;
 @property(nonatomic, strong, readonly) UITextField *search;
 @property(nonatomic, strong, readwrite) NSMutableArray *data;
+@property(nonatomic, strong, readwrite) NSMutableDictionary *expandedCells;
 @property(nonatomic, assign, readwrite) BOOL didSetupConstraints;
 
 @end
@@ -28,6 +31,7 @@
     if (self) {
         _didSetupConstraints = NO;
         _data = [NSMutableArray array];
+        _expandedCells = [NSMutableDictionary dictionary];
     }
     
     return self;
@@ -72,6 +76,7 @@
     
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapView)];
     singleTap.numberOfTapsRequired = 1;
+    singleTap.cancelsTouchesInView = NO;
     [self.view addGestureRecognizer:singleTap];
     
     [self.view setNeedsUpdateConstraints];
@@ -138,6 +143,15 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     WELogCell *cell = [tableView dequeueReusableCellWithIdentifier:@"WE_LOG_CELL"];
     WELog *log = _data[indexPath.row];
+    CGFloat cellHeight = [self computeCellHeightFromIndexPath:indexPath];
+    
+    if (cellHeight > kCompactedCellHeight) {
+        cell.canExpand = YES;
+        cell.backgroundColor = [UIColor colorWithRed:0.1f green:0.1f blue:0.1f alpha:1.0f];
+    } else {
+        cell.canExpand = NO;
+        cell.backgroundColor = [UIColor blackColor];
+    }
     
     [cell setLog:log];
     
@@ -146,7 +160,7 @@
 
 #pragma mark - UITableViewDelegate
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (CGFloat)computeCellHeightFromIndexPath:(NSIndexPath *)indexPath {
     WELog *log = _data[indexPath.row];
     CGSize maxSize = CGSizeMake([UIScreen mainScreen].bounds.size.width - 32.0f, CGFLOAT_MAX);
     UIFont *font = [UIFont systemFontOfSize:14.0f];
@@ -155,7 +169,31 @@
     return frameCell.size.height;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    CGFloat cellHeight = [self computeCellHeightFromIndexPath:indexPath];
+    
+    if (cellHeight > kCompactedCellHeight && !_expandedCells[@(indexPath.row)]) {
+        return kCompactedCellHeight;
+    }
+    
+    return cellHeight;
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    WELogCell *cell = (WELogCell *)[self tableView:_terminal cellForRowAtIndexPath:indexPath];
+    
+    if (cell.canExpand) {
+        if ([_expandedCells objectForKey:@(indexPath.row)]) {
+            [_expandedCells removeObjectForKey:@(indexPath.row)];
+        } else {
+            _expandedCells[@(indexPath.row)] = @(YES);
+        }
+        
+        [_terminal beginUpdates];
+        [_terminal endUpdates];
+    }
 }
 
 #pragma mark - UITextFieldDelegate

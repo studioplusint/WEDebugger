@@ -13,4 +13,6 @@
 
 - (void)setLog:(WELog *)log;
 
+@property(nonatomic, assign, readwrite) BOOL canExpand;
+
 @end

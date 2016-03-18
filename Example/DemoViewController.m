@@ -17,6 +17,7 @@
 @property(nonatomic, strong, readonly) UIButton *button02;
 @property(nonatomic, strong, readonly) UIButton *button03;
 @property(nonatomic, strong, readonly) UIButton *button04;
+@property(nonatomic, strong, readonly) UIButton *button05;
 @property(nonatomic, strong, readonly) UIButton *logsButton;
 @property(nonatomic, assign, readwrite) BOOL didSetupConstraints;
 
@@ -45,12 +46,14 @@
     _button02 = [self buttonWithText:@"Success" logsButton:NO];
     _button03 = [self buttonWithText:@"Infos" logsButton:NO];
     _button04 = [self buttonWithText:@"Error" logsButton:NO];
+    _button05 = [self buttonWithText:@"Big log" logsButton:NO];
     _logsButton = [self buttonWithText:@"See logs" logsButton:YES];
     
     [self.view addSubview:_button01];
     [self.view addSubview:_button02];
     [self.view addSubview:_button03];
     [self.view addSubview:_button04];
+    [self.view addSubview:_button05];
     [self.view addSubview:_logsButton];
     
     [self.view setNeedsUpdateConstraints];
@@ -104,6 +107,16 @@
             _button04.layer.cornerRadius = size.height / 2.0f;
         }];
         
+        [_button05 mas_remakeConstraints:^(MASConstraintMaker *make) {
+            CGSize size = CGSizeMake([_button05 intrinsicContentSize].width + 40.0f, [_button05 intrinsicContentSize].height);
+            
+            make.size.mas_equalTo(size);
+            make.centerX.mas_equalTo(self.view);
+            make.bottom.mas_equalTo(_button04.mas_top).with.offset(-16.0f);
+            
+            _button05.layer.cornerRadius = size.height / 2.0f;
+        }];
+        
         [_logsButton mas_remakeConstraints:^(MASConstraintMaker *make) {
             CGSize size = CGSizeMake([_logsButton intrinsicContentSize].width + 40.0f, [_logsButton intrinsicContentSize].height);
             
@@ -127,6 +140,8 @@
         WEInfosLog(sender.titleLabel.text);
     } else if (sender == _button04) {
         WEErrorLog(sender.titleLabel.text);
+    } else if (sender == _button05) {
+        WELog(@"Illud tamen te esse admonitum volo, primum ut qualis es talem te esse omnes existiment ut, quantum a rerum turpitudine abes, tantum te a verborum libertate seiungas; deinde ut ea in alterum ne dicas, quae cum tibi falso responsa sint, erubescas. Quis est enim, cui via ista non pateat, qui isti aetati atque etiam isti dignitati non possit quam velit petulanter, etiamsi sine ulla suspicione, at non sine argumento male dicere? Sed istarum partium culpa est eorum, qui te agere voluerunt; laus pudoris tui, quod ea te invitum dicere videbamus, ingenii, quod ornate politeque dixisti.\n\nIllud tamen te esse admonitum volo, primum ut qualis es talem te esse omnes existiment ut, quantum a rerum turpitudine abes, tantum te a verborum libertate seiungas; deinde ut ea in alterum ne dicas, quae cum tibi falso responsa sint, erubescas. Quis est enim, cui via ista non pateat, qui isti aetati atque etiam isti dignitati non possit quam velit petulanter, etiamsi sine ulla suspicione, at non sine argumento male dicere? Sed istarum partium culpa est eorum, qui te agere voluerunt; laus pudoris tui, quod ea te invitum dicere videbamus, ingenii, quod ornate politeque dixisti.\n\nIllud tamen te esse admonitum volo, primum ut qualis es talem te esse omnes existiment ut, quantum a rerum turpitudine abes, tantum te a verborum libertate seiungas; deinde ut ea in alterum ne dicas, quae cum tibi falso responsa sint, erubescas. Quis est enim, cui via ista non pateat, qui isti aetati atque etiam isti dignitati non possit quam velit petulanter, etiamsi sine ulla suspicione, at non sine argumento male dicere? Sed istarum partium culpa est eorum, qui te agere voluerunt; laus pudoris tui, quod ea te invitum dicere videbamus, ingenii, quod ornate politeque dixisti.");
     }
 }
 
