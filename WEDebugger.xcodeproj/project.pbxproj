@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3F23F749947DC3752E77B244 /* Pods_WEDebugger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FBA62B1523B86A0FAB9EECA /* Pods_WEDebugger.framework */; };
 		BE0F2C9F1C9BE771007A63F0 /* WELogCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE0F2C9E1C9BE771007A63F0 /* WELogCell.m */; };
 		BE0F2CA21C9BE92E007A63F0 /* WELog.m in Sources */ = {isa = PBXBuildFile; fileRef = BE0F2CA11C9BE92E007A63F0 /* WELog.m */; };
 		BED38F121C9AB32500F5B790 /* WEDebugger.m in Sources */ = {isa = PBXBuildFile; fileRef = BED38F111C9AB32500F5B790 /* WEDebugger.m */; };
@@ -17,12 +16,12 @@
 		BEF814051C9AB15800FF34C8 /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF814031C9AB15800FF34C8 /* DemoViewController.m */; };
 		BEF814071C9AB16100FF34C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEF814061C9AB16100FF34C8 /* Assets.xcassets */; };
 		BEF8140C1C9AB16F00FF34C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEF814081C9AB16F00FF34C8 /* LaunchScreen.storyboard */; };
+		F9C555FA94FC21A2AFA39076 /* Pods_WEDebugger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFB2B8AA3789CF133C73FED9 /* Pods_WEDebugger.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5FBA62B1523B86A0FAB9EECA /* Pods_WEDebugger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WEDebugger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		93B684ABE831D030F743DC43 /* Pods-WEDebugger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WEDebugger.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WEDebugger/Pods-WEDebugger.debug.xcconfig"; sourceTree = "<group>"; };
-		B66632B67E679B6A47D59314 /* Pods-WEDebugger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WEDebugger.release.xcconfig"; path = "Pods/Target Support Files/Pods-WEDebugger/Pods-WEDebugger.release.xcconfig"; sourceTree = "<group>"; };
+		00C1A07D5881962B2A1905D6 /* Pods-WEDebugger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WEDebugger.release.xcconfig"; path = "Pods/Target Support Files/Pods-WEDebugger/Pods-WEDebugger.release.xcconfig"; sourceTree = "<group>"; };
+		2280FAB345499926CA9740C7 /* Pods-WEDebugger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WEDebugger.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WEDebugger/Pods-WEDebugger.debug.xcconfig"; sourceTree = "<group>"; };
 		BE0F2C9D1C9BE771007A63F0 /* WELogCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WELogCell.h; path = Source/WELogCell.h; sourceTree = SOURCE_ROOT; };
 		BE0F2C9E1C9BE771007A63F0 /* WELogCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WELogCell.m; path = Source/WELogCell.m; sourceTree = SOURCE_ROOT; };
 		BE0F2CA01C9BE92E007A63F0 /* WELog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WELog.h; path = Source/WELog.h; sourceTree = SOURCE_ROOT; };
@@ -40,6 +39,7 @@
 		BEF814031C9AB15800FF34C8 /* DemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DemoViewController.m; path = Example/DemoViewController.m; sourceTree = SOURCE_ROOT; };
 		BEF814061C9AB16100FF34C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Example/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		BEF814091C9AB16F00FF34C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Example/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
+		BFB2B8AA3789CF133C73FED9 /* Pods_WEDebugger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WEDebugger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,18 +47,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F23F749947DC3752E77B244 /* Pods_WEDebugger.framework in Frameworks */,
+				F9C555FA94FC21A2AFA39076 /* Pods_WEDebugger.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		35679355DF2CA93B5F13ECD2 /* Pods */ = {
+		423654FEC216A8987F21AC0F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				93B684ABE831D030F743DC43 /* Pods-WEDebugger.debug.xcconfig */,
-				B66632B67E679B6A47D59314 /* Pods-WEDebugger.release.xcconfig */,
+				2280FAB345499926CA9740C7 /* Pods-WEDebugger.debug.xcconfig */,
+				00C1A07D5881962B2A1905D6 /* Pods-WEDebugger.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -68,8 +68,8 @@
 			children = (
 				BE23AE661C9AB0BF006856BC /* WEDebugger */,
 				BE23AE651C9AB0BF006856BC /* Products */,
-				35679355DF2CA93B5F13ECD2 /* Pods */,
-				FA5583C3C1820FBB7A94CC71 /* Frameworks */,
+				423654FEC216A8987F21AC0F /* Pods */,
+				F32F4DFB60A9D1C7AD2B72A4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -120,10 +120,10 @@
 			name = Source;
 			sourceTree = "<group>";
 		};
-		FA5583C3C1820FBB7A94CC71 /* Frameworks */ = {
+		F32F4DFB60A9D1C7AD2B72A4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5FBA62B1523B86A0FAB9EECA /* Pods_WEDebugger.framework */,
+				BFB2B8AA3789CF133C73FED9 /* Pods_WEDebugger.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -135,12 +135,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BE23AE7B1C9AB0BF006856BC /* Build configuration list for PBXNativeTarget "WEDebugger" */;
 			buildPhases = (
-				8B42C862D0339A7C070E93AA /* Check Pods Manifest.lock */,
+				4A597BB1C3A08182988D6C19 /* [CP] Check Pods Manifest.lock */,
 				BE23AE601C9AB0BF006856BC /* Sources */,
 				BE23AE611C9AB0BF006856BC /* Frameworks */,
 				BE23AE621C9AB0BF006856BC /* Resources */,
-				D196322AB6B20CC9F0D86F03 /* Embed Pods Frameworks */,
-				E111B11ADFFB2D0C8CC5417C /* Copy Pods Resources */,
+				FFF6F6BC2FF1864909419B28 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -157,7 +156,7 @@
 		BE23AE5C1C9AB0BE006856BC /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Lucas Ortis";
 				TargetAttributes = {
 					BE23AE631C9AB0BF006856BC = {
@@ -197,49 +196,40 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		8B42C862D0339A7C070E93AA /* Check Pods Manifest.lock */ = {
+		4A597BB1C3A08182988D6C19 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WEDebugger-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D196322AB6B20CC9F0D86F03 /* Embed Pods Frameworks */ = {
+		FFF6F6BC2FF1864909419B28 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-WEDebugger/Pods-WEDebugger-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WEDebugger/Pods-WEDebugger-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E111B11ADFFB2D0C8CC5417C /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WEDebugger/Pods-WEDebugger-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -281,13 +271,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -324,13 +324,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -355,13 +365,13 @@
 		};
 		BE23AE7C1C9AB0BF006856BC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 93B684ABE831D030F743DC43 /* Pods-WEDebugger.debug.xcconfig */;
+			baseConfigurationReference = 2280FAB345499926CA9740C7 /* Pods-WEDebugger.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "$(SRCROOT)/Example/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Ekhoo.WEDebugger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -371,13 +381,13 @@
 		};
 		BE23AE7D1C9AB0BF006856BC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B66632B67E679B6A47D59314 /* Pods-WEDebugger.release.xcconfig */;
+			baseConfigurationReference = 00C1A07D5881962B2A1905D6 /* Pods-WEDebugger.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "$(SRCROOT)/Example/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Ekhoo.WEDebugger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
